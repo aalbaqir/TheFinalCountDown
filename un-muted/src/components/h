@@ -1,0 +1,82 @@
+// import './App.css';
+// import React, { useState, useEffect } from 'react';
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import Home from './components/Home';
+// import NavBar from './components/NavBar';
+
+
+// function App() {
+
+//   return (<>
+
+
+
+// <BrowserRouter>
+      
+      
+      
+//       <NavBar/>
+    
+     
+//      <Switch>
+       
+//         <Route exact path='/' component={Home}/>
+
+      
+//     </Switch>  
+   
+   
+  
+//   </BrowserRouter>
+  
+ 
+
+
+ 
+ 
+ 
+//  </> );
+// }
+
+// export default App;
+
+
+
+    // const [news, setNews] = useState([])
+    // // const [moreNews, setMoreNews] = useState([])
+
+    // const fetchNews =()=>{
+    // const news1 ='https://newsapi.org/v2/top-headlines?country=za&apiKey=7b150eb4ad774c6b8b9e0ec7f8f68479'
+    // const news2 = 'https://newsapi.org/v2/top-headlines?country=ng&apiKey=7b150eb4ad774c6b8b9e0ec7f8f68479'
+    
+    //     const getNews1 = axios.get(news1)
+    //     const getNews2 = axios.get(news2)
+    //     axios.all([getNews1, getNews2]).then(
+    //         axios.spread((...allData) => {
+    //             let allDataNews
+    //             console.log(allData)
+    //             console.log(allData[0].data.articles)
+    //             for (let i = 0; i < 2; i++) {
+    //                 // for (let j = 0; j < allData[i].data.articles; j++)
+    //                 allDataNews = allData[i].data.articles
+    //                 console.log(allDataNews.length)
+    //             }
+                
+    //             // const allDataNews2 = allData[1].data.articles
+
+            
+    //             // news.push(allDataNews2)
+
+    //             setNews(allDataNews)
+    //             // setNews(allDataNews2)
+
+
+    //             console.log(allDataNews)
+    //             // console.log(moreNews)
+            
+    //         })
+          
+
+    // )
+
+        

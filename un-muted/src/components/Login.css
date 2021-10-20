@@ -1,0 +1,244 @@
+.login-form{
+    padding:  30px;
+    padding-top: 15px;
+    background: rgba(119, 5, 5, 0.418);
+    margin-top: 50px;
+    /* margin-left:500px; */
+    margin-right: 500px;
+    /* color: white; */
+    font-weight: bold;
+    border: 4px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* width: 40%; */
+    text-align: center;
+    margin-top: 10%;
+}
+
+div{
+    column-count: 1;
+    /* column-width: 70px; */
+  }
+
+.imgcontainer{
+    max-height:200px;
+   max-width: 200px;
+   /* position: absolute; */
+
+    /* justify-content: flex-start; */
+}
+
+.user-container{
+    padding-bottom: 20px;
+    padding-right: 70px;
+}
+
+
+
+
+label.user{
+    padding: 10px;
+    color: rgb(77, 0, 0);
+    font-size: 16px;
+    font-family: roboto;
+
+
+}
+
+label.pass{
+    padding: 15px;
+    padding-bottom: 10px;
+    color: rgb(77, 0, 0);
+    font-size: 16px;
+    font-family: roboto;
+
+
+}
+
+.passinput{
+    border-style: inset;
+    padding: 5px;
+    color: rgb(77, 0, 0);
+    font-size: 16px;
+    font-family: roboto;
+    margin-bottom: 5%;
+}
+
+.userinput{
+    border-style: inset;
+    background-color:rgba(255, 255, 255, 0.767);
+    /* padding-top: 5px;
+    padding-bottom:5px; */
+    color:black;
+    padding: 8px;
+    padding-left:20px;
+    font-size:small;
+    margin-top: 5%;
+}
+.userinput.text{
+    color:black;
+}
+
+
+
+.login{
+    /* padding: 15px; */
+    margin-left: 20px;
+    background-color: rgba(104, 1, 1, 0.809);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    margin-left: 15px;
+    
+
+}
+.login:hover {
+    border: 2px solid transparent;
+    color: #dfdfdf;
+    transform: scale(1.05);
+}
+.container.psw{
+    font-family: roboto;
+
+}
+
+.avatar{
+    display: block;
+    margin-left: 90%;
+    /* margin-right: auto; */
+    /* width: 50%; */
+}
+
+.SignUp-form{
+    padding:  30px;
+    padding-top: 15px;
+    background: rgba(105, 4, 66, 0.185);
+    margin-top: 50px;
+    /* margin-left:500px; */
+    /* margin-right: 500px; */
+}
+
+/* //////////////// */
+
+
+.login-form2{
+    padding:  30px;
+    padding-top: 15px;
+    background: rgba(158, 3, 16, 0.761);
+    margin-top: 50px;
+    /* margin-left:500px; */
+    /* margin-right: 500px; */
+}
+
+
+
+.edit-profile{
+    padding:  30px;
+    padding-top: 15px;
+    background: rgba(162, 198, 213, 0.562);
+    margin-top: 50px;
+    /* margin-left:500px; */
+    /* margin-right: 500px; */
+}
+
+
+
+
+.user-container{
+    padding-bottom: 20px;
+    padding-right: 70px;
+    column-span: all;
+
+}
+
+label.user{
+    padding: 10px;
+    color: rgb(77, 0, 0);
+    font-size: 16px;
+    font-family: roboto;
+    column-span: all;
+
+
+
+}
+
+label.pass{
+    padding: 15px;
+    padding-bottom: 10px;
+    color: rgb(77, 0, 0);
+    font-size: 16px;
+    font-family: roboto;
+
+
+}
+
+.profilepic{
+    background-color:rgba(255, 255, 255, 0.767);
+    padding-top: 5px;
+    padding-bottom:5px;
+    color:black;
+    margin-right: 18%;
+
+}
+
+.profilebio{
+    background-color:rgb(255, 255, 255);
+    padding-top: 5px;
+    padding-bottom:5px;
+    color:black;
+}
+.userinput.text{
+    color:black;
+}
+
+.passinput{
+    border-style: inset;
+    background-color:rgba(255, 255, 255, 0.767);
+    /* padding-top: 5px;
+    padding-bottom:5px; */
+    color:black;
+    padding: 8px;
+    padding-left:20px;
+    font-size:small;
+    margin-top: 5%;
+
+}
+
+
+
+.bio-button{
+    /* padding: 15px; */
+    margin-left: 10px;
+    background-color: rgba(0, 0, 4, 0.733);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    margin-left: 10px;
+    
+
+}
+.login:hover {
+    border: 2px solid transparent;
+    color: #dfdfdf;
+    transform: scale(1.05);
+}
+.container.psw{
+    font-family: roboto;
+
+}
+

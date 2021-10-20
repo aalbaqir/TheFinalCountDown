@@ -1,0 +1,44 @@
+
+
+.button {
+  /* border: 2px solid currentColor; */
+  border-radius: 10px;
+  color: rgb(59, 8, 8);
+  font-family: roboto;
+  font-size: 18px;
+  padding: 5px 15px;
+  /* position: static; */
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  margin-left: 10%;
+}
+
+.button:hover::after {
+  transform: translate(0, 0);
+  color:azure;
+}
+.button:hover {
+  border: 2px solid;
+  color: #ffffff;
+  transform: scale(1.25);
+  will-change: transform;
+}
+
+
+  .button-hover{
+      color:aquamarine;
+  }
+
+
+
+.body{
+    background-color: rgba(255, 0, 0, 0.288);
+}
+
+
+
+
+
+  
