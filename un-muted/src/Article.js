@@ -2,12 +2,13 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
+import SearchBar from './components/Search';
 
-function Article(){
+function Article(props){
 
 const [news, setNews] = useState([])
 // const [loading, setLoading] = useState(false);
-console.log(news)
+// console.log(news)
 
 
 
@@ -17,21 +18,21 @@ console.log(news)
 
         let firstNews = fetch("https://newsapi.org/v2/top-headlines?country=za&apiKey=b500b37d628240f094166bda8e2edd9a");
         let secondNews = fetch("https://newsapi.org/v2/top-headlines?country=ng&apiKey=b500b37d628240f094166bda8e2edd9a");
-        console.log(firstNews)
+        // console.log(firstNews)
         Promise.all([firstNews, secondNews])
           .then(values => Promise.all(values.map(value => value.json())))
           .then(finalVals => {
             let firstNewsRes = finalVals[0].articles;
             let secondNewsRes = finalVals[1].articles;
             let newNews= secondNewsRes.concat(firstNewsRes)
-            console.log(newNews)
+            // console.log(newNews)
             setNews(newNews);
             // console.log(news)
           });
         
     
         }
-        console.log(news)
+        // console.log(news)
 
 useEffect(() => {        
         fetchNews()
@@ -54,17 +55,18 @@ useEffect(() => {
 
 
         {news.map(eachArticle => {
-             (console.log(eachArticle))
+            //  (console.log(eachArticle))
 
-          return(
-          
+          return(<>
+                    <SearchBar eachArticle={eachArticle}/>
 
-                    <Home eachArticle={eachArticle}/>
+                      
+                    <Home eachArticle={eachArticle} isFlipped={props.isFlipped}/>
+          
+                  
           
           
-          
-          
-                )
+               </> )
         
             })      
     

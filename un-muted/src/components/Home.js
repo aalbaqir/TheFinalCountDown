@@ -96,7 +96,13 @@ function Home (props) {
     }
 
 
-   
+   const isFlipped=(e)=>{
+    e.preventDefault()
+    console.log(props.isFlipped(e))
+    props.isFlipped(true)
+     
+
+   }
    
   //  /// for the Favorites button ///
   //    const favoritedPlantClickHandler= (se) => {
@@ -153,7 +159,7 @@ return(<>
          <div>
             <div className="blog-container">
                 <h1>{props.eachArticle.title}</h1>
-               {console.log(props.eachArticle)}
+               {/* {console.log(props.eachArticle)} */}
                 {<img src={props.eachArticle.urlToImage} className="photo"/>}
                 <h3>Written By: {props.eachArticle.author}</h3>   
                 <h2>{props.eachArticle.description} </h2>
@@ -161,10 +167,12 @@ return(<>
                 <h3>Source: {props.eachArticle.source.name}</h3>
                
                 <form onSubmit={handleComment} className="comment-form">
-                  <input type="text" value={entry} onChange={(e)=>setEntry(e.target.value)}  placeholder="Add Comment To This Article"/><input type="submit"/>
+                  <input className="comment-input" type="text" value={entry} onChange={(e)=>setEntry(e.target.value)}  placeholder="Add Comment To This Article"/><input type="submit"/>
                 </form>
                   <br>
             </br>
+
+            <button onClick={isFlipped}> View Comments  </button>
             <br>
             </br>
         

@@ -6,13 +6,13 @@
   color: rgb(59, 8, 8);
   font-family: roboto;
   font-size: 18px;
-  padding: 5px 15px;
+  padding: 5px 10px;
   /* position: static; */
   text-decoration: none;
   transition: 0.2s transform ease-in-out;
   will-change: transform;
   z-index: 0;
-  margin-left: 10%;
+  margin-left: 1%;
 }
 
 .button:hover::after {
@@ -38,7 +38,13 @@
 }
 
 
+.search{
+  padding-left: 70%;
+  /* margin-bottom: 10px; */
+}
 
 
+.navbar{
 
-  
+
+}

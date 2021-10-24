@@ -6,7 +6,7 @@ import SearchBar from './Search';
 
 
 
-function NavBar(){
+function NavBar(props){
 
 
 
@@ -25,6 +25,8 @@ function NavBar(){
            
 
         <nav className="navbar">
+
+          
             
             <NavLink className="button" to="/Home">
                 Home
@@ -39,11 +41,13 @@ function NavBar(){
             <NavLink className="button" to="/Signup">
                Sign Up
             </NavLink>
+            
+            <SearchBar/>
         
            
            
          
-          
+            {/* <h3> {props.user} </h3> */}
    
             </nav> 
     

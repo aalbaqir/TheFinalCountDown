@@ -37,13 +37,11 @@ body{
 
 .blog-container{
 text-align: center;
-/* max-width: 75%; */
-padding-left: 5%;
-padding-right: 5%;
-/* padding-bottom: 5%; */
-padding-top: 5%;
+padding-left: 3%;
+padding-right: 3%;
+padding-top: 3%;
 background-color: rgba(90, 90, 90, 0.378);
-margin-left: 20%;
+margin-left: 25%;
 margin-right: 5%; 
 margin-top: 10%;
 margin-bottom: 8px;
@@ -52,16 +50,13 @@ border-style: outset;
 border-width: 5px;
 border-color: rgba(255, 255, 255, 0.555);
 font-family:New Century Schoolbook, serif;
-/* font-family: serif, New Century Schoolbook, serif;; */
 resize: both;
 overflow: auto;
 max-height: auto;
 word-break: keep-all;
 display: inline-block;
-/* background-color: rgba(0, 0, 0, 0.13); */
-max-width: 50%;
+max-width: 45%;
 max-height: 40%;
-/* transform: translate(-50%, -50%); */
 text-transform: capitalize;
 
 
@@ -87,10 +82,13 @@ text-transform: capitalize;
 nav{
   /* margin-right: 1000%; */
   column-span: all;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
   border: 3px solid #fdfdfdd3;
   text-decoration: none;
   padding: 1%;
+  padding-top: 2%;
+  /* display: inline; */
+
 
 
 
@@ -103,20 +101,39 @@ a{
 
 h1{
   column-span: all;
+  text-shadow: 2px 2px #ffffff77;
+  font-family: sans-serif, Verdana;
+
 
 }
 
 h2{
   column-span: all;
+  font-family: sans-serif, Verdana;
+  /* text-shadow: 2px 2px #ffffff77; */
+  font-size: 15px;
+
+  
 
 }
 
 h3{
   column-span: all;
+  font-family: sans-serif, Verdana;
+  /* text-shadow: 2px 2px #ffffff77; */
+  font-style: italic;
+  font-size: 12px;
+
+
 
 }
 h4{
   column-span: all;
+  font-family: sans-serif, Verdana;
+  
+
+  /* text-shadow: 2px 2px #ffffff77; */
+
 
 }
 

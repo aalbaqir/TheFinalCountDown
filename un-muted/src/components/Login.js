@@ -10,22 +10,29 @@ function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(false);
 
-    useEffect(() => {
-      fetch("/me").then((response) => {
-        if (response.ok) {
-          response.json().then((user) => setUser(user));
-          console.log(user)
-        }
-      });
-    }, []);
+   
+   
+   
+    // useEffect(() => {
+    //   fetch("http://localhost:3000/me")
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       response.json().then((user) => setUser(user));
+    //       console.log(user)
+    //     }
+    //   });
+    // }, []);
 
-  
+   
     
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
       e.preventDefault()
       e.target.reset()
       console.log("working")
+
+      
     
       fetch("http://localhost:3000/login", {
         method: "POST",
@@ -33,25 +40,44 @@ function Login(props) {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password })
       })
         .then(res => res.json())
         .then(loggedInUser => {
           console.log(loggedInUser)
           if (loggedInUser.username) {
+            localStorage.token = loggedInUser.token
+            localStorage.user_id = loggedInUser.id
+            localStorage.user_name = loggedInUser.username
+            console.log(localStorage)
+            setLoggedIn(true)
+            console.log(loggedIn)
             setUser(loggedInUser)
-            console.log(user)
             props.history.push("/Home")
           }
           else {
             alert("invalid username or password!")
-          }
-
-          
+          }         
         
         }
         )
+        
     }
+
+
+  
+
+    console.log(user)
+
+
+    // useEffect(() => {
+    //   fetch("/me").then((response) => {
+    //     if (response.ok) {
+    //       response.json().then((user) => setUser(user));
+    //       console.log(user)
+    //     }
+    //   });
+    // }, []);
 
     function handleLogout() {
       fetch("http://localhost:3000/logout", {
@@ -76,11 +102,10 @@ function Login(props) {
     }
 
  
-    return (<>
-
-<NavLink onClick={handleLogout} className="logout-button" to="./logout">
-                Log-Out
-</NavLink>
+    // return (loggedIn ? <NavLink onClick={handleLogout} className="logout-button" to="./logout">Log Out</NavLink> :
+    return(
+    <>
+    
        
         {/* <div class="login-image">  */}
 
@@ -88,30 +113,30 @@ function Login(props) {
         
         {/* </div> */}
        
-       <form onSubmit={handleSubmit} onReset={resetForm} className="login-form"  method="post">
-       {/* <div class="imgcontainer">
-            <img src="https://api.freelogodesign.org/files/32f0cf4ec5e4472bbe8c77d33669c459/thumb/logo_200x200.png?v=637685737110000000" alt="Avatar" class="avatar"/>
-       </div> */}
-           {/* <div className="user-container"> */}
-                   <label className="user" for="uname"><b>Username</b></label>
-                   <input className="userinput" type="text" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Enter Username" name="uname" required/>
-           {/* </div> */}
-           {/* <div className="password-container"> */}
-                  <br></br>
-                   <label className="pass" for="psw"><b>Password</b></label>
-                   <input className="passinput" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" name="psw" required/>
+                <form onSubmit={(e) => handleSubmit(e)} onReset={resetForm} className="login-form"  method="post">
+                {/* <div class="imgcontainer">
+                      <img src="https://api.freelogodesign.org/files/32f0cf4ec5e4472bbe8c77d33669c459/thumb/logo_200x200.png?v=637685737110000000" alt="Avatar" class="avatar"/>
+                </div> */}
+                    {/* <div className="user-container"> */}
+                            <label className="user" for="uname"><b>Username</b></label>
+                            <input className="userinput" type="text" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Enter Username" name="uname" required/>
+                    {/* </div> */}
+                    {/* <div className="password-container"> */}
+                            <br></br>
+                            <label className="pass" for="psw"><b>Password</b></label>
+                            <input className="passinput" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" name="psw" required/>
 
-                
-                   <button className="login" type="submit"> Login</button>
-                  
+                          
+                            <button className="login" type="submit"> Login</button>
+                            
 
-                   {/* <input type="checkbox" checked="checked" name="remember"/> Remember me</label> */}
-                   
-         {/* </div> */}
-  
-    
-      </form>
-  </>  );
+                            {/* <input type="checkbox" checked="checked" name="remember"/> Remember me</label> */}
+                            
+                  {/* </div> */}
+            
+              
+                </form>
+    </>  );
   }
 
 
