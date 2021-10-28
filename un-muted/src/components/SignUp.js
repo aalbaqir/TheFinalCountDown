@@ -1,6 +1,6 @@
 // import { ModalBody } from 'react-bootstrap';
 import './SignUp.css';
-import './Login.css';
+// import './Login.css';
 
 import { useState } from 'react';
 // import Login from './Login';

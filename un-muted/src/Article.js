@@ -1,23 +1,23 @@
 
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
-import SearchBar from './components/Search';
 
 function Article(props){
 
 const [news, setNews] = useState([])
-// const [loading, setLoading] = useState(false);
-// console.log(news)
+const   [searchedNews, setSearchedNews] = useState("")
 
 
+console.log(props)
 
+
+console.log(props.articlesPitStop)
 
  function fetchNews() {
         
 
-        let firstNews = fetch("https://newsapi.org/v2/top-headlines?country=za&apiKey=b500b37d628240f094166bda8e2edd9a");
-        let secondNews = fetch("https://newsapi.org/v2/top-headlines?country=ng&apiKey=b500b37d628240f094166bda8e2edd9a");
+        let firstNews = fetch("https://newsapi.org/v2/top-headlines?country=za&apiKey=a94a669ef32e481da9d3a5e9ac2cdd71");
+        let secondNews = fetch("https://newsapi.org/v2/top-headlines?country=ng&apiKey=a94a669ef32e481da9d3a5e9ac2cdd71");
         // console.log(firstNews)
         Promise.all([firstNews, secondNews])
           .then(values => Promise.all(values.map(value => value.json())))
@@ -32,36 +32,110 @@ const [news, setNews] = useState([])
         
     
         }
-        // console.log(news)
+
+
+// function fetchNews(){
+
+
+
+//   fetch("http://localhost:3000/news_articles")
+//   .then(response => response.json())
+//   .then(data =>{
+//     console.log(data[0].comments);
+
+
+// setNews(data)
+
+//   })
+
+
+// }
+console.log(news)
 
 useEffect(() => {        
-        fetchNews()
+  fetchNews()
 
 
 }, [])
 
-
-
+const searchBarInput=(se)=> {
+  console.log(se.target.value)
+  setSearchedNews(se.target.value)
   
-
-    
-
-   
+}
 
 
+
+const submitForm = (e) => {
+  e.preventDefault()
+  e.target.reset()
+
+
+
+
+  let filteredNewsSearch 
+  if (searchedNews != ""){
+      console.log(searchedNews)
+
+      filteredNewsSearch = news.filter( filteredNews => filteredNews.title.toLowerCase().includes(searchedNews.toLowerCase()))
+
+      console.log(filteredNewsSearch)
+
+      setNews(filteredNewsSearch)
+
+      // props.sendingUp(filteredNewsSearch)
+
+      console.log(news)
+  }
+  
+  else {
+      filteredNewsSearch = news
+      setNews(filteredNewsSearch)
+      // props.sendingUp(news)
+
+  }
+
+
+filteredNewsSearch.map(eachArticle=>{
+  console.log(eachArticle)
+})
+
+}
+
+
+    // props.appToHome()
 
 
     return(<>
+      <form onSubmit={submitForm} className="search" action="/Search" method="get">
+          <label htmlFor="header-search">
+          <span className="visually-hidden">Search blog posts</span>
+          </label>
+            <input
+                type="text"
+                id="header-search"
+                placeholder="Search blog posts"
+                name="s" 
+                value={searchedNews}
+                onChange={searchBarInput}
+                />
+          <button type="submit">Search</button>
+      </form>
+
 
 
         {news.map(eachArticle => {
+                  {/* {props.articlesPitStop.map(eachArticle => { */}
+                  {/* {t.map(eachArticle => { */}
+
+
             //  (console.log(eachArticle))
 
           return(<>
-                    <SearchBar eachArticle={eachArticle}/>
+                    {/* <SearchBar eachArticle={eachArticle}/> */}
 
                       
-                    <Home eachArticle={eachArticle} isFlipped={props.isFlipped}/>
+                    <Home eachArticle={eachArticle} isFlipped={props.isFlipped} appToHome={props.appToHome}/>
           
                   
           

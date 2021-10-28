@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.scss";
 
 
 // import axios from 'axios';
@@ -9,6 +11,8 @@ import './Home.css';
 
 
 function Home (props) {
+
+  const [articlesPitStop, setArticlesPitStop] = useState([])
   // const [passedProp, setPassedProp] = useState({});
   // await props
 
@@ -33,8 +37,15 @@ function Home (props) {
         const [sad, setSad] = useState(0)
         const [entry, setEntry] = useState("")
         const [user, setUser] = useState(null);
+        const [comment, setComments] = useState([])
 
 
+        // setComments(props.eachArticle.comments.entry)
+
+
+
+
+  
 
     //     const [news, setNews] = useState([])
 
@@ -95,14 +106,45 @@ function Home (props) {
 
     }
 
+    // useEffect(() => {
+    //   fetch("http://localhost:3000/allcomments")
+    //   .then(response => response.json())
+    //   .then(fetchedComments =>{ console.log(fetchedComments);
+      
+    //   setComments(fetchedComments)
 
-   const isFlipped=(e)=>{
-    e.preventDefault()
-    console.log(props.isFlipped(e))
-    props.isFlipped(true)
+    //   console.log(comment)
+    //   })
+    //   comment.map(eachComment=>{
+    //     console.log(eachComment)
+    //   }
+    //     )
+
+    // }, [])
+
+  
+
+  
+
+    // props.appToHome()
+
+
+    const handleClick =()=>{
+   
+const card = document.querySelector(".card__inner");
+
+card.addEventListener("click", function () {
+  card.classList.toggle('is-flipped');
+});
+    }
+
+  //  const isFlipped=(e)=>{
+  //   e.preventDefault()
+  //   // console.log(props.isFlipped(e))
+  //   setIsFlipped(true)
      
 
-   }
+  //  }
    
   //  /// for the Favorites button ///
   //    const favoritedPlantClickHandler= (se) => {
@@ -155,41 +197,64 @@ function Home (props) {
     
   }
   
+
+  // console.log(eachComment)
+  
 return(<>
-         <div>
-            <div className="blog-container">
+
+
+   <div class="card">
+		<div onClick={handleClick} class="card__inner">
+			<div class="card__face card__face--front">
+            <div className="new-thang">
                 <h1>{props.eachArticle.title}</h1>
                {/* {console.log(props.eachArticle)} */}
-                {<img src={props.eachArticle.urlToImage} className="photo"/>}
+                {<img src={props.eachArticle.urlToImage} className="pp"/>}
                 <h3>Written By: {props.eachArticle.author}</h3>   
-                <h2>{props.eachArticle.description} </h2>
-               <h4> <a href={props.eachArticle.url}> Read More... </a></h4>
+                <h3>{props.eachArticle.description} </h3>
                 <h3>Source: {props.eachArticle.source.name}</h3>
-               
+                <h4> <a href={props.eachArticle.url}> Read More... </a></h4>
+                <br>
+                </br>
                 <form onSubmit={handleComment} className="comment-form">
                   <input className="comment-input" type="text" value={entry} onChange={(e)=>setEntry(e.target.value)}  placeholder="Add Comment To This Article"/><input type="submit"/>
                 </form>
-                  <br>
-            </br>
-
-            <button onClick={isFlipped}> View Comments  </button>
-            <br>
-            </br>
-        
-
-        <div>
-
-               <span> <button onClick={onClick} > 👍  {like} </button>  <button onClick={onDislike}> 👎  {dislike} </button>  <button onClick={onLove}> ❤️ {heart} </button> <button onClick={onSad}> 😢 {sad} </button> </span>
-        </div>
-               <br>
-            </br>
-            
+                <br>
+                </br>
+                <span> <button onClick={onClick} > 👍  {like} </button>  <button onClick={onDislike}> 👎  {dislike} </button>  <button onClick={onLove}> ❤️ {heart} </button> <button onClick={onSad}> 😢 {sad} </button> </span>
             </div>
-
-        
-      </div>
-      
+		
+			</div>
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+          <h4>{props.eachArticle.title}</h4>
+          {<img src={props.eachArticle.urlToImage} className="pp"/>}
+          
+					</div>
+					<div class="card__body">
+						<h3>Comments</h3>
+            <h5> Very Intresting Article!</h5>
+            <p> - Mr. Lemon </p>
     
+            <h5> I read it twice!</h5>
+            <p> - Trev </p>
+
+            <h5> Didn't know this happen. </h5>
+            <p> - Liz </p>
+						{/* <p>{props.eachComment.entry}</p> */}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+
+
+
+
+
+
     </>);
 }
 

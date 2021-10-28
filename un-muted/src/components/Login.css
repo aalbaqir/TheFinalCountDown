@@ -1,7 +1,7 @@
 .login-form{
     padding:  30px;
     padding-top: 15px;
-    background: rgba(119, 5, 5, 0.418);
+    background: rgba(0, 0, 0, 0.35);
     margin-top: 50px;
     /* margin-left:500px; */
     margin-right: 500px;
@@ -41,7 +41,7 @@ div{
 
 label.user{
     padding: 10px;
-    color: rgb(77, 0, 0);
+    color: rgb(189, 0, 0);
     font-size: 16px;
     font-family: roboto;
 
@@ -51,7 +51,7 @@ label.user{
 label.pass{
     padding: 15px;
     padding-bottom: 10px;
-    color: rgb(77, 0, 0);
+    color: rgb(189, 0, 0);
     font-size: 16px;
     font-family: roboto;
 
@@ -87,7 +87,7 @@ label.pass{
 .login{
     /* padding: 15px; */
     margin-left: 20px;
-    background-color: rgba(104, 1, 1, 0.809);
+    background-color: rgb(206, 0, 0);
     border: none;
     color: rgb(255, 255, 255);
     padding: 10px 20px;
@@ -121,7 +121,7 @@ label.pass{
 .SignUp-form{
     padding:  30px;
     padding-top: 15px;
-    background: rgba(105, 4, 66, 0.185);
+    background: rgba(0, 0, 0, 0.35);
     margin-top: 50px;
     /* margin-left:500px; */
     /* margin-right: 500px; */
@@ -142,9 +142,9 @@ label.pass{
 
 
 .edit-profile{
-    padding:  30px;
+    padding:  20px;
     padding-top: 15px;
-    background: rgba(162, 198, 213, 0.562);
+    background: rgba(213, 162, 162, 0.562);
     margin-top: 50px;
     /* margin-left:500px; */
     /* margin-right: 500px; */
@@ -162,8 +162,8 @@ label.pass{
 
 label.user{
     padding: 10px;
-    color: rgb(77, 0, 0);
-    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
     font-family: roboto;
     column-span: all;
 
@@ -174,8 +174,8 @@ label.user{
 label.pass{
     padding: 15px;
     padding-bottom: 10px;
-    color: rgb(77, 0, 0);
-    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
     font-family: roboto;
 
 
@@ -218,7 +218,7 @@ label.pass{
 .bio-button{
     /* padding: 15px; */
     margin-left: 10px;
-    background-color: rgba(0, 0, 4, 0.733);
+    background-color: rgba(4, 0, 0, 0.733);
     border: none;
     color: rgb(255, 255, 255);
     padding: 10px 20px;
@@ -242,3 +242,15 @@ label.pass{
 
 }
 
+
+.sign-up{
+    margin-top: 5%;
+    text-decoration: none;
+    border: 2px solid transparent;
+    color: #dfdfdf;
+    transform: none
+}
+
+/* h3.sign-up{
+    margin-bottom: 2%;
+} */

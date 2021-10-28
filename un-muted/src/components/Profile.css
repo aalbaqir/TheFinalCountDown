@@ -1,0 +1,50 @@
+.profile{
+    margin-top: 7%;
+    margin-bottom: ;
+    padding: 5%;
+    text-align: center;
+    /* position: absolute; */
+    /* margin-left: 37%; */
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 6px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(rgba(170, 7, 7, 0.938), rgb(255, 143, 143), rgb(255, 109, 109), rgb(79, 0, 0));
+    margin: auto;
+    width: 50%;
+
+    border: 6px outset rgb(255, 255, 255);
+    /* padding: 10px; */
+}
+
+h1{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-shadow: brown;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.avatar {
+    display: block;
+    width: 278px;
+    height: 228px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: 3px solid #FFF;
+    object-fit: cover;
+    margin-top: 50px;
+  }
+
+  .edit-profile{
+    position: absolute;
+    bottom: 50px;
+    right:1px;
+    width: 23%;
+    background-color: rgba(116, 116, 116, 0.726);
+  }

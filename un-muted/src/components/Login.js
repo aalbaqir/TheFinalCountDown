@@ -15,15 +15,7 @@ function Login(props) {
    
    
    
-    // useEffect(() => {
-    //   fetch("http://localhost:3000/me")
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       response.json().then((user) => setUser(user));
-    //       console.log(user)
-    //     }
-    //   });
-    // }, []);
+  
 
    
     
@@ -46,9 +38,14 @@ function Login(props) {
         .then(loggedInUser => {
           console.log(loggedInUser)
           if (loggedInUser.username) {
-            localStorage.token = loggedInUser.token
+            // localStorage.token = loggedInUser.token
             localStorage.user_id = loggedInUser.id
             localStorage.user_name = loggedInUser.username
+            localStorage.picture= loggedInUser.picture
+            localStorage.name =loggedInUser.name
+            localStorage.email = loggedInUser.email
+            localStorage.country = loggedInUser.country
+            localStorage.member_since = loggedInUser.member_since
             console.log(localStorage)
             setLoggedIn(true)
             console.log(loggedIn)
@@ -129,6 +126,14 @@ function Login(props) {
                           
                             <button className="login" type="submit"> Login</button>
                             
+                            <h3 className="sign-up">Not Yet a Member?
+                            <br>
+                            </br>
+                            <br>
+                            </br>
+                             <NavLink className="button" to="/Signup">
+               Sign Up
+            </NavLink></h3>
 
                             {/* <input type="checkbox" checked="checked" name="remember"/> Remember me</label> */}
                             

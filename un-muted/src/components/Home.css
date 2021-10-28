@@ -41,3 +41,48 @@ input{
 form.button{
     margin-left:3%;
 }
+
+
+
+h1{
+    column-span: all;
+    text-shadow: 2px 2px #00000077;
+    font-family: sans-serif, Verdana;
+    
+  
+  
+  }
+  
+  h2{
+    column-span: all;
+    font-family: sans-serif, Verdana;
+    /* text-shadow: 2px 2px #ffffff77; */
+    font-size: 5px;
+  
+    
+  
+  }
+  
+  h3{
+    column-span: all;
+    font-family: sans-serif, Verdana;
+    /* text-shadow: 2px 2px #ffffff77; */
+    font-style: italic;
+    font-size: 12px;
+  
+  
+  
+  }
+  h4{
+    column-span: all;
+    font-family: sans-serif, Verdana;
+    
+  
+    /* text-shadow: 2px 2px #ffffff77; */
+  
+  
+  }
+
+  .card_body{
+      text-align: center;
+  }
