@@ -11,11 +11,11 @@
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 6px 3px 18px 3px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(rgba(170, 7, 7, 0.938), rgb(255, 143, 143), rgb(255, 109, 109), rgb(79, 0, 0));
+    background-image: linear-gradient(rgba(60, 0, 0, 0.611), rgb(187, 61, 61), rgb(123, 0, 0), rgba(79, 0, 0, 0.611));
     margin: auto;
-    width: 50%;
+    width: 45%;
 
-    border: 6px outset rgb(255, 255, 255);
+    border: 6px solid rgba(77, 0, 0, 0.76);
     /* padding: 10px; */
 }
 
@@ -31,20 +31,94 @@ h2{
 
 .avatar {
     display: block;
-    width: 278px;
-    height: 228px;
+    width: 298px;
+    height: 258px;
     margin: 0 auto 30px;
     border-radius: 50%;
     background-color: #FFF;
-    border: 3px solid #FFF;
+    border: 2px groove rgb(255, 255, 255);
     object-fit: cover;
-    margin-top: 50px;
+    margin-top: 10%;
+    box-shadow: 6px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10%;
+    /* padding: 10px; */
   }
 
   .edit-profile{
     position: absolute;
-    bottom: 50px;
-    right:1px;
+    bottom: 40px;
+    right:15px;
     width: 23%;
     background-color: rgba(116, 116, 116, 0.726);
+    border: 4px groove rgb(255, 255, 255);
+}
+
+  .profile-card{
+    border: 5px groove rgb(230, 230, 230);
+      background-color: rgba(118, 0, 0, 0.342);
+      padding: 3%;
+      /* margin-left: 10%;
+      margin-right: 10%; */
+      color: white;
+      border-radius: 10px;
+      overflow-wrap: break-word;
+      margin-bottom: 10%;
+      margin: auto;
+
   }
+
+  button.edit{
+      color: rgb(255, 255, 255);
+      background-color: rgba(79, 0, 13, 0.158);
+      border-radius: 200px;
+      border: 4px groove rgb(255, 255, 255);
+      margin-top: 3%;
+  }
+
+  .welcome{
+    
+    /* border: 4px dotted rgba(255, 255, 255, 0.363); */
+    /* background-color: rgb(143, 0, 0); */
+    padding: 1%;
+    /* margin-left: 7%; */
+    /* margin-right: 5%; */
+    color: white;
+    border-radius: 10px;
+    margin:auto
+    
+  }
+
+  h1.welcome{
+      font-size: 40px;
+      /* column-span:all; */
+      white-space: nowrap;
+      /* margin-right: 25%; */
+      /* text-shadow: 5px 3px #000000b2; */
+      text-shadow:1px 1px 10px #fff, 1px 1px 10px rgb(167, 38, 38);
+
+    }
+
+    .autho{
+      font-size:30px;
+      background-color: rgba(255, 255, 255, 0.733);
+      margin-top: 90px;
+      text-align: center;
+      text-transform: capitalize;
+      color: black;
+    }
+
+    .autho-s{
+      font-size:30px;
+      background-color: rgba(255, 255, 255, 0.733);
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: crimson;
+    }
+
+    .autho-s:hover{
+      /* background-color: crimson; */
+      color: rgb(0, 0, 0);
+      /* border-style: inset; */
+      /* border-radius: 2px; */
+    }

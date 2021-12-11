@@ -42,14 +42,12 @@ function NavBar(props){
             <NavLink className="button" to="/Home">
                 Home
             </NavLink>
-         
             <NavLink className="button" to="/Profile">
               Profile
             </NavLink>
-{/* 
-            <NavLink className="button" to="/Profile">
+            <NavLink className="button" to="/RequestCountry">
               Request a Country
-            </NavLink> */}
+            </NavLink>
             <NavLink className="button" to="/">
                Login
             </NavLink>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
+import { useForm } from 'react-hook-form' 
 
 
 // import axios from 'axios';
@@ -10,7 +11,10 @@ import "./styles.scss";
 
 
 
+
 function Home (props) {
+
+  const {reset} = useForm()
 
   const [articlesPitStop, setArticlesPitStop] = useState([])
   // const [passedProp, setPassedProp] = useState({});
@@ -37,8 +41,11 @@ function Home (props) {
         const [sad, setSad] = useState(0)
         const [entry, setEntry] = useState("")
         const [user, setUser] = useState(null);
-        const [comment, setComments] = useState([])
-
+        const [comment, setComments] = useState("")
+        const [newComment, setNewComment] = useState([
+          {entry: "Very Interesting"},
+          {entry: "Will Read Again!"}
+        ])
 
         // setComments(props.eachArticle.comments.entry)
 
@@ -84,19 +91,21 @@ function Home (props) {
 
     function handleComment(e) {
       e.preventDefault();
+      setNewComment(prev=>prev.concat({entry}))
+      setEntry("")
       
       
     console.log('You clicked submit.');
 
-  const comment = {
-      entry
-  }
+  // const comment = {
+  //     entry
+  // }
 
-  fetch('http://localhost:3000/enter',{
-      method: "POST",
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(comment)
-  })
+  // fetch('http://localhost:3000/enter',{
+  //     method: "POST",
+  //     headers:{'Content-Type':'application/json'},
+  //     body:JSON.stringify(comment)
+  // })
 
   alert("Thanks For Sharing")
   // props.history.push('/Home')
@@ -127,6 +136,8 @@ function Home (props) {
   
 
     // props.appToHome()
+
+  
 
 
     const handleClick =()=>{
@@ -196,6 +207,13 @@ card.addEventListener("click", function () {
  
     
   }
+
+  const resetForm = () => {
+    console.log('You clicked submit.');
+    setEntry("")
+
+   
+  }
   
 
   // console.log(eachComment)
@@ -210,40 +228,66 @@ return(<>
                 <h1>{props.eachArticle.title}</h1>
                {/* {console.log(props.eachArticle)} */}
                 {<img src={props.eachArticle.urlToImage} className="pp"/>}
-                <h3>Written By: {props.eachArticle.author}</h3>   
-                <h3>{props.eachArticle.description} </h3>
-                <h3>Source: {props.eachArticle.source.name}</h3>
+              <br></br>
+
+                {/* <h3 class="written">Written By: {props.eachArticle.author}</h3>    */}
+                <h3 class="description">{props.eachArticle.description} </h3>
                 <h4> <a href={props.eachArticle.url}> Read More... </a></h4>
                 <br>
                 </br>
-                <form onSubmit={handleComment} className="comment-form">
-                  <input className="comment-input" type="text" value={entry} onChange={(e)=>setEntry(e.target.value)}  placeholder="Add Comment To This Article"/><input type="submit"/>
+                <span class="likes"> <button onClick={onClick} > 👍  {like} </button>  <button onClick={onDislike}> 👎  {dislike} </button>  <button onClick={onLove}> ❤️ {heart} </button> <button onClick={onSad}> 😢 {sad} </button> </span>
+                <br>
+                </br>
+                <br>
+                </br>
+                {/* <br>
+                </br> */}
+                <form onSubmit={handleComment}  onReset={resetForm} className="comment-form">
+                  <input className="comment-input" type="text" value={entry} onChange={(e)=>setEntry(e.target.value)}  placeholder="Add Comment To This Article"/><input class="submit" type="submit"/>
                 </form>
                 <br>
                 </br>
-                <span> <button onClick={onClick} > 👍  {like} </button>  <button onClick={onDislike}> 👎  {dislike} </button>  <button onClick={onLove}> ❤️ {heart} </button> <button onClick={onSad}> 😢 {sad} </button> </span>
+                {/* <h3 class="source">Source: {props.eachArticle.source.name}</h3> */}
+
+                
             </div>
 		
 			</div>
 			<div class="card__face card__face--back">
 				<div class="card__content">
 					<div class="card__header">
-          <h4>{props.eachArticle.title}</h4>
+          <h1 class="back-title">{props.eachArticle.title}</h1>
           {<img src={props.eachArticle.urlToImage} className="pp"/>}
           
 					</div>
 					<div class="card__body">
-						<h3>Comments</h3>
-            <h5> Very Intresting Article!</h5>
-            <p> - Mr. Lemon </p>
-    
-            <h5> I read it twice!</h5>
-            <p> - Trev </p>
 
-            <h5> Didn't know this happen. </h5>
-            <p> - Liz </p>
+						<h5>Comments</h5>
+
+            {newComment.map(eachComment=>{
+            console.log(eachComment)
+            
+   
+
+            return(<>
+                <h3 class="comments">{eachComment.entry}</h3>
+                <h5> - UnMuted User</h5>
+                <br></br>
+
+            </>)
+        })}
+         
+              {/* <h5> Very Intresting Article!</h5>
+              <p> - Mr. Lemon </p>
+      
+              <h5> I read it twice!</h5>
+              <p> - Trev </p> */}
+
+             
+
+            </div>
 						{/* <p>{props.eachComment.entry}</p> */}
-					</div>
+					
 				</div>
 			</div>
 		</div>

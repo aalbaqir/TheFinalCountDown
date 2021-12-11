@@ -131,7 +131,7 @@ function Login(props) {
                             </br>
                             <br>
                             </br>
-                             <NavLink className="button" to="/Signup">
+                             <NavLink className="button-s" to="/Signup">
                Sign Up
             </NavLink></h3>
 

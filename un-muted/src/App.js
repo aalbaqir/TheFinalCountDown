@@ -12,6 +12,7 @@ import Article from './Article';
 import Profile from './components/Profile';
 import CardFlip from './CardFlip';
 import FlipCard from './components/FlipCard';
+import RequestACountry from './components/Request';
 
 function App() {
 
@@ -63,7 +64,7 @@ function App() {
             <Route exact path='/' component={Login}/>
             <Route exact path='/Home'> <Article appToHome={appToHome} articlesPitStop={articlesPitStop} text={"text"} /> </Route>
             <Route exact path='/FlipCard' component={FlipCard}/>
-
+            <Route exact path='/RequestCountry' component={RequestACountry}/>
             {/* <Route exact path='/Home' component={CardFlip}/> */}
             <Route exact path='/SignUp' component={Signup}/>
             <Route exact path='/Logout' component={Logout}/>

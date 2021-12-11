@@ -86,3 +86,44 @@ h1{
   .card_body{
       text-align: center;
   }
+
+  input#header-search{
+    margin-top: 4%;
+    margin-left: 75%;
+    margin-right: 1%;
+    padding-left: 10px;
+    border: 4px solid rgb(162, 0, 0);
+
+  }
+
+  .search{
+    color: rgb(162, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    border: 4px solid rgb(162, 0, 0);
+    text-align: center;
+    
+  }
+
+
+.search:hover::after {
+  transform: translate(0, 0);
+  color:azure;
+}
+.search:hover {
+  border: 4px solid rgb(65, 0, 0);
+  border-radius: 200px;
+  color: #850000;
+  transform: scale(1.05);
+  will-change: transform;
+  background-color: rgb(255, 255, 255);
+}
+
+.description{
+  text-decoration: none;
+  font-size: 20px;
+  color:black;
+  /* text-transform: ; */
+  
+
+}

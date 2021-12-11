@@ -76,7 +76,7 @@ const [edit, setEdit] =useState(false)
         }
 
         
-        console.log("HIT")
+        console.log("Patch Me Up")
         e.preventDefault()
      
 
@@ -97,9 +97,14 @@ const [edit, setEdit] =useState(false)
         setCountry(country)
         setPicture(picture) 
 
+
+       setEdit(false)
+
         
 
     }  
+
+
 
     function handleLogout() {
         fetch("http://localhost:3000/logout", {
@@ -118,7 +123,10 @@ const [edit, setEdit] =useState(false)
                 
               })}
     
-    
+    function handleSign () {
+        props.history.push("/")
+
+    }
 
         // journal=journal
 
@@ -130,14 +138,14 @@ return( localStorage.user_name ? <div>
 <NavLink onClick={handleLogout} className="logout-button" to="./logout">  Log Out  </NavLink> 
 
                     <div class="profile">
-                    <h1> Welcome, {localStorage.name}</h1>
+                    <h1 class="welcome"> Welcome, {localStorage.name}👋!</h1>
                     <img class="avatar" src={localStorage.picture} alt="Avatar"/>
+                    <div class="profile-card">
                     <h2> Name: {localStorage.user_name} </h2>
                     <h2>Email: {localStorage.email}</h2>
                     <h2> Country: {localStorage.country}</h2>
                     <h2>Member Since: {localStorage.member_since}</h2>
-                        <br>
-                        </br>
+                    </div>    
                  
                  <button onClick={()=>setEdit(true)} className="edit"> Edit Profile </button>    
                  </div>
@@ -160,7 +168,7 @@ return( localStorage.user_name ? <div>
                     <br>
                     </br>
                     <input className="profilecountry" type="text" value={country} onChange={newCountryUpdate} placeholder="Country" name="Update Country" required/>
-                    <button onClick={()=>setEdit(false)} className="bio-button" type="submit"> Update</button>
+                    <button  className="bio-button" type="submit"> Update</button>
             </form> : null}  
                          
                
@@ -171,7 +179,9 @@ return( localStorage.user_name ? <div>
         
         
    
-    </div> : <h4>You're not authorized to view this page</h4>)
+    </div> : <>
+    <h4 class="autho">You're not authorized to view this page. Please  <NavLink onClick={handleLogout} className="autho-s" to="./">  Sign-In! </NavLink> </h4> 
+   </> )
     
 }
 

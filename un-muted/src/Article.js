@@ -58,10 +58,14 @@ useEffect(() => {
 
 }, [])
 
-const searchBarInput=(se)=> {
-  console.log(se.target.value)
-  setSearchedNews(se.target.value)
-  
+
+
+const searchBarInput=(e)=> {
+  console.log(e.target.value)
+  setSearchedNews(e.target.value)
+  // e.target.reset();
+
+
 }
 
 
@@ -102,12 +106,18 @@ filteredNewsSearch.map(eachArticle=>{
 
 }
 
+const resetForm = () => {
+  console.log('You clicked submit.');
+  setSearchedNews("")
+
+ 
+}
 
     // props.appToHome()
 
 
     return(<>
-      <form onSubmit={submitForm} className="search" action="/Search" method="get">
+      <form onSubmit={submitForm} onReset={resetForm} className="search-form" action="/Search" method="get">
           <label htmlFor="header-search">
           <span className="visually-hidden">Search blog posts</span>
           </label>
@@ -118,8 +128,9 @@ filteredNewsSearch.map(eachArticle=>{
                 name="s" 
                 value={searchedNews}
                 onChange={searchBarInput}
+                 
                 />
-          <button type="submit">Search</button>
+          <button class="search" type="submit">Search</button>
       </form>
 
 

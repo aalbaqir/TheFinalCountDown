@@ -86,7 +86,7 @@ label.pass{
 
 .login{
     /* padding: 15px; */
-    margin-left: 20px;
+    margin-left: 18px;
     background-color: rgb(206, 0, 0);
     border: none;
     color: rgb(255, 255, 255);
@@ -236,6 +236,7 @@ label.pass{
     border: 2px solid transparent;
     color: #dfdfdf;
     transform: scale(1.05);
+    background-color: black;
 }
 .container.psw{
     font-family: roboto;
@@ -254,3 +255,25 @@ label.pass{
 /* h3.sign-up{
     margin-bottom: 2%;
 } */
+
+.button-s{
+    margin-left: 10px;
+    background-color: rgba(4, 0, 0, 0.733);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    margin-left: 10px;
+}
+
+.button-s:hover {
+    border: 2px solid transparent;
+    color: #dfdfdf;
+    transform: scale(1.05);
+    background-color: rgb(179, 3, 3);
+}
